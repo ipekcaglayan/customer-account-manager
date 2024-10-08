@@ -1,0 +1,5 @@
+application:
+  name: account-management-service
+  kafka:
+    notification:
+      topic: "notifications"

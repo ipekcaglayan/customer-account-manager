@@ -33,7 +33,16 @@ public class AccountServiceImpl implements AccountService {
             throw new CustomerNotFoundException(String.format("Customer not found with the given id: %s", customerId));
         }
         Account account = accountRepository.save(new Account(customer.get()));
-        // #TODO trigger transaction creation if initial credit is not 0
+
+        Long initialCredit = createAccountDTO.getInitialCredit();
+        if (initialCredit != 0) {
+            NotificationContentDTO content = new NotificationContentDTO(
+                    NotificationContentType.CREATE_TRANSACTION,
+                    account.getId(),
+                    initialCredit
+            );
+            this.notificationProducer.sendNotification(content);
+        }
 
         return accountMapper.toDto(account);
     }
