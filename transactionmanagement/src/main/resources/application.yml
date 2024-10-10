@@ -1,0 +1,6 @@
+application:
+  name: transaction-management-service
+  kafka:
+    notification:
+      topic: notifications
+      group-id: transaction-management-consumer-${random.uuid}
