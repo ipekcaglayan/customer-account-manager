@@ -32,7 +32,7 @@ public class AccountServiceImpl implements AccountService {
         if (customer.isEmpty()) {
             throw new CustomerNotFoundException(String.format("Customer not found with the given id: %s", customerId));
         }
-        Account account = accountRepository.save(new Account(customer.get()));
+        Account account = accountRepository.save(new Account(customer.get(), createAccountDTO.getInitialCredit()));
 
         Long initialCredit = createAccountDTO.getInitialCredit();
         if (initialCredit != 0) {

@@ -10,6 +10,9 @@ import jakarta.persistence.Column;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+
 
 import java.time.OffsetTime;
 
@@ -17,6 +20,8 @@ import java.time.OffsetTime;
 @Getter
 @Setter
 @EqualsAndHashCode(exclude = "createdAt")
+@AllArgsConstructor
+@NoArgsConstructor
 public class Account {
 
     @Id
@@ -32,8 +37,9 @@ public class Account {
     @Column(nullable = false) // Timestamp cannot be null
     private OffsetTime createdAt = OffsetTime.now();
 
-    public Account(Customer customer) {
+    public Account(Customer customer, Long balance) {
         this.customer = customer;
+        this.balance = balance;
     }
 
 
