@@ -37,3 +37,26 @@ services:
                 bootstrap.servers: "kafka:9093"
     depends_on:
       - kafka
+
+  transactionmanagement:
+    build:
+      context: ../transactionmanagement
+    ports:
+      - "8081:8081"
+    environment:
+      KAFKA_BOOTSTRAP_SERVERS: kafka:9093
+  accountmanagement:
+    build:
+      context: ../accountmanagement
+    ports:
+      - "8080:8080"
+    environment:
+      KAFKA_BOOTSTRAP_SERVERS: kafka:9093
+  angular-ui:
+    build:
+      context: ../customer-account-manager-ui  
+    ports:
+      - "4200:80"
+    depends_on:
+      - transactionmanagement
+      - accountmanagement
