@@ -41,7 +41,7 @@ This application requires Docker to be installed, as all services and dependenci
    ```
 4. Start the Application with Docker Compose
    ```sh
-   docker-compose up --build
+   docker compose up --build
    ```
 5. Once the application is up and running, navigate to http://localhost:4200/ in your web browser.
    ```sh
