@@ -61,13 +61,13 @@ public class AccountServiceTest {
 
         accountService.createAccount(createAccountDTO);
 
-        verify(accountRepository).save(new Account(customer));
+        verify(accountRepository).save(new Account(customer, 0L));
     }
 
     @Test
     public void testCreateAccount_WithInitialCreditGreaterThanZero_SuccessfulCreation() {
         createAccountDTO.setInitialCredit(10L);
-        Account account = new Account(customer);
+        Account account = new Account(customer, 10L);
         Long accountId = new Random().nextLong();
         account.setId(accountId);
         when(customerRepository.findById(customerId)).thenReturn(Optional.of(customer));
@@ -97,7 +97,7 @@ public class AccountServiceTest {
     @Test
     public void testGetAccountsByCustomerId() {
 
-        Account account = new Account(customer);
+        Account account = new Account(customer, 0L);
         List<Account> accountList = List.of(account);
         AccountDTO accountDTO = new AccountDTO();
         CustomerDTO customerDTO = new CustomerDTO();

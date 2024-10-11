@@ -1,7 +1,6 @@
 package com.assignment.accountmanagement.controller;
 
 import com.assignment.accountmanagement.dto.AccountDTO;
-import com.assignment.accountmanagement.dto.CreateCustomerDTO;
 import com.assignment.accountmanagement.dto.CustomerDTO;
 import com.assignment.accountmanagement.service.AccountService;
 import com.assignment.accountmanagement.service.CustomerService;
@@ -20,14 +19,6 @@ import java.util.List;
 public class CustomerController {
     private final AccountService accountService;
     private final CustomerService customerService;
-
-
-    @PostMapping
-    public ResponseEntity<CustomerDTO> createCustomer(@RequestBody CreateCustomerDTO createCustomerDTO) {
-        log.info("REST request to create a customer: {}", createCustomerDTO.toString());
-        CustomerDTO result = customerService.createCustomer(createCustomerDTO);
-        return ResponseEntity.ok().body(result);
-    }
 
     @GetMapping
     public ResponseEntity<List<CustomerDTO>> getAllCustomers() {

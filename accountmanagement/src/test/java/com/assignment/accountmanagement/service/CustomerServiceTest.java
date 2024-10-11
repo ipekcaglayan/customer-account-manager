@@ -1,6 +1,7 @@
 package com.assignment.accountmanagement.service;
 
 import com.assignment.accountmanagement.dto.CreateCustomerDTO;
+import com.assignment.accountmanagement.mapper.CustomerMapper;
 import com.assignment.accountmanagement.model.Customer;
 import com.assignment.accountmanagement.repository.CustomerRepository;
 
@@ -20,6 +21,8 @@ public class CustomerServiceTest {
     private CustomerServiceImpl customerService;
     @Mock
     private CustomerRepository customerRepository;
+    @Mock
+    private CustomerMapper customerMapper;
 
     @Test
     public void testCreateCustomer() {
@@ -30,6 +33,7 @@ public class CustomerServiceTest {
 
         verify(customerRepository).save(new Customer(firstName, lastName));
     }
+
     @Test
 
     public void testGetAllCustomers() {
