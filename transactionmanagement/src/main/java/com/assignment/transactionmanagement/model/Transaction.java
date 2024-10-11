@@ -1,16 +1,16 @@
 package com.assignment.transactionmanagement.model;
 
 import jakarta.persistence.*;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
-import java.time.OffsetTime;
+import java.time.OffsetDateTime;
 
 @Entity
 @Getter
 @Setter
 @EqualsAndHashCode(exclude = "createdAt")
+@AllArgsConstructor
+@NoArgsConstructor
 public class Transaction {
 
     @Id
@@ -24,7 +24,7 @@ public class Transaction {
     private Long amount;
 
     @Column(nullable = false)
-    private OffsetTime createdAt = OffsetTime.now();
+    private OffsetDateTime createdAt = OffsetDateTime.now();
 
     public Transaction(Long accountId, Long amount) {
         this.accountId = accountId;

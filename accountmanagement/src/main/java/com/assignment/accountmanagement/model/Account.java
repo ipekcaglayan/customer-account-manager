@@ -14,7 +14,7 @@ import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
 
-import java.time.OffsetTime;
+import java.time.OffsetDateTime;
 
 @Entity
 @Getter
@@ -35,7 +35,7 @@ public class Account {
     private Long balance = 0L;
 
     @Column(nullable = false) // Timestamp cannot be null
-    private OffsetTime createdAt = OffsetTime.now();
+    private OffsetDateTime createdAt = OffsetDateTime.now();
 
     public Account(Customer customer, Long balance) {
         this.customer = customer;

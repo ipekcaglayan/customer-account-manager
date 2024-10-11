@@ -19,5 +19,8 @@ public class AccountDTO implements Serializable {
     private Long id;
     @NonNull
     private CustomerDTO customer;
+    @NonNull
     private Long balance;
+    @NonNull
+    private String createdAt;
 }

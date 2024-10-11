@@ -8,7 +8,7 @@ import lombok.NonNull;
 
 import java.io.Serial;
 import java.io.Serializable;
-import java.time.OffsetTime;
+import java.time.OffsetDateTime;
 
 @Data
 @AllArgsConstructor
@@ -23,6 +23,6 @@ public class TransactionDTO implements Serializable {
     @NonNull
     private Long amount;
     @NonNull
-    private OffsetTime createdAt;
+    private String createdAt;
 }
 
