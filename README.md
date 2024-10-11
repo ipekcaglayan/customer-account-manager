@@ -50,8 +50,11 @@ This application requires Docker to be installed, as all services and dependenci
 
 # Application Screenshots
 
-1. Switching Between Customers ![img.png](img.png)
+### Switching Between Customers 
+![img.png](img.png)
 
-2. Creating an Account for Selected Customer ![img_1.png](img_1.png)
+### Creating an Account for Selected Customer 
+![img_1.png](img_1.png)
 
-3.Accessing Account and Transaction Details ![img_2.png](img_2.png)
+### Accessing Account and Transaction Details 
+![img_2.png](img_2.png)
