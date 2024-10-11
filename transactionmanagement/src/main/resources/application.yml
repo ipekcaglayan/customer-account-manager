@@ -1,6 +1,7 @@
 application:
   name: transaction-management-service
   kafka:
+    bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVERS:localhost:9092}
     notification:
       topic: notifications
       group-id: transaction-management-consumer-${random.uuid}

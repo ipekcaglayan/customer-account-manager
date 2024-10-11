@@ -1,5 +1,6 @@
 application:
   name: account-management-service
   kafka:
+    bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVERS:localhost:9092}
     notification:
       topic: "notifications"

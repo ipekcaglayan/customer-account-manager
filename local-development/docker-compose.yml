@@ -54,7 +54,7 @@ services:
       KAFKA_BOOTSTRAP_SERVERS: kafka:9093
   angular-ui:
     build:
-      context: ../customer-account-manager-ui  
+      context: ../customer-account-manager-ui
     ports:
       - "4200:80"
     depends_on:
