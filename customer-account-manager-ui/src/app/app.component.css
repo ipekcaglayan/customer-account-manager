@@ -1,0 +1,15 @@
+html, body {
+  height: 100%; /* Ensure the HTML and body take up 100% of the height */
+}
+
+.main-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+  overflow: auto;
+}
+mat-accordion {
+  width: 100%; /* Full width for the accordion */
+}
